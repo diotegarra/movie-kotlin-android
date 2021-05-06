@@ -33,7 +33,7 @@
         android:layout_toEndOf="@+id/image_view_poster_item_movie"
         android:layout_toRightOf="@+id/image_view_poster_item_movie"
         android:contentDescription="@string/image_view_vote_average"
-        android:src="@drawable/ic_star_pink_24dp" />
+        android:src="@drawable/ic_star" />
 
     <TextView
         android:id="@+id/text_view_vote_average_item_movie"
