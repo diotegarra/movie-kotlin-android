@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.diotegar.movie"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "production", "development"
+    productFlavors {
+        production {
+            applicationIdSuffix ".production"
+            buildConfigField("String", "API_KEY", "\"d6feeeb9b1a4146d27faeb0c075ffd18\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "LANGUAGE", "\"EN-US\"")
+            buildConfigField("String", "BASE_URL_IMAGE", "\"https://image.tmdb.org/t/p/w185/\"")
+            dimension "production"
+        }
+        development {
+            applicationIdSuffix ".development"
+            buildConfigField("String", "API_KEY", "\"d6feeeb9b1a4146d27faeb0c075ffd18\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "LANGUAGE", "\"EN-US\"")
+            buildConfigField("String", "BASE_URL_IMAGE", "\"https://image.tmdb.org/t/p/w185/\"")
+            dimension "development"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:26.1.0'
+
+    //networking
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit-converters:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    //image
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    //recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.2.0'
+
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}
