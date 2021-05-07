@@ -1,11 +1,9 @@
 <resources>
-    <string name="app_name">The Movie</string>
-    <string name="image_view_poster_movie">image view poster movie</string>
-    <string name="title_movie">Title Movie</string>
-    <string name="release_date">Release Date</string>
-    <string name="release_date_value">Release Date Value</string>
-    <string name="image_view_vote_average">image view vote average</string>
-    <string name="_0_0">0.0</string>
-    <string name="overview">Overview</string>
-    <string name="overview_value">Overview Value</string>
+    <string name="app_name">The Movie DB</string>
+    <string name="tab_title_movie">Movie</string>
+    <string name="tab_title_tvshow">TV Show</string>
+    <string name="toolbar_title_detail_movie">Detail Movie</string>
+    <string name="toolbar_title_detail_tvshow">Detail TV Show</string>
+    <string name="desc_image_highlight">Image Highlight</string>
+    <string name="lb_description">Description</string>
 </resources>
